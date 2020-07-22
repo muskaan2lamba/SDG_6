@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Internship Homepage</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+<script>
+    function exportF(elem) {
+  var table = document.getElementById("table");
+  var html = table.outerHTML;
+  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
+  elem.setAttribute("href", url);
+  elem.setAttribute("download", "export.xls"); // Choose the file name
+  return false;
+}
+</script>    
+</head>
+<body>
+    <table id="table" border="1">
+        <tr>
+          <td>
+            Foo
+          </td>
+          <td>
+            Bar
+          </td>
+        </tr>
+      </table>
+      
+      <a id="downloadLink" onclick="exportF(this)">Export to excel</a>
+</body>
+</html>  
+
